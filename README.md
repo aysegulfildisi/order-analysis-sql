@@ -23,3 +23,4 @@ Veri setinden elde edilen aylık sipariş dağılımı aşağıdaki gibidir:
 
 
 🔗 İlişkisel Şema
+ilişkisel şema.png
