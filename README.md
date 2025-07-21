@@ -278,4 +278,18 @@ scores as (
 
 Bu aşamaya kadar recency, frequency, monetary değerleri hesaplanmış ve skorlar belirlenmiştir.
 
-
+--Daha sonra bu skorlar concat komutuyla birleştirilmiştir.
+brfm_scores as (
+	select *,
+	concat(recency_score,frequency_score,monetary_score)::integer as rfm_score
+	from scores
+)
+--Sorgunun devamında birleştirilen skorlar 5 ana müşteri segmenti çerçevesinde değerlendirilmiştir.
+select *,
+case when rfm_score <=111 and rfm_score <=222 then 'Cant Lose Them'
+when rfm_score <=222 and rfm_score <=333 then 'At Risk Customer'
+	 when rfm_score <=333 and rfm_score <=444 then 'New Customers'
+	 when rfm_score <=444 and rfm_score <=555 then 'Potential Loyalists'
+ else 'Champions' end as customer_segment
+	from brfm_scores
+<img width="470" height="157" alt="image" src="https://github.com/user-attachments/assets/1c6f0ee2-fb02-48d5-a70c-d459bdb8ed1d" />
