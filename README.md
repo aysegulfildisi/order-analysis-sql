@@ -23,4 +23,4 @@ Veri setinden elde edilen aylık sipariş dağılımı aşağıdaki gibidir:
 
 
 🔗 İlişkisel Şema
-ilişkisel şema.png
+[ilişkisel şema.png](https://github.com/aysegulfildisi/order-analysis-sql/blob/main/ilis%CC%A7kisel%20s%CC%A7ema.png)
